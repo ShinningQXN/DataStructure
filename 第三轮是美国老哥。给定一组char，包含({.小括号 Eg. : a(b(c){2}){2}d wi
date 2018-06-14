@@ -1,0 +1,34 @@
+第三轮是美国老哥。给定一组char，包含({.小括号 Eg. : a(b(c){2}){2}d will be decompressed as abccbccd. {}中间的是前面（）里的内容的重复次数。
+思路用栈，所有的往栈里压，直到），开始把上一个（之后的全部弹出到栈外，然后乘以倍数，然后翻转，再重新压到栈里，然后直到最后，全都弹出栈，翻转，就是结果了。
+这一轮比较明确的是题意的沟通之类的很好，因为代码写到一半的时候老哥都可以跟我准确的保持same page（尽管我之前讲思路的时候他都一直是嗯嗯嗯），但遗憾的是代码还差两三行收尾。老哥先掐表聊了15分钟，真是掐表聊的。尬聊也要拖够点。
+
+def fun(arr):
+    stack = []
+    i = 0
+    while i < len (arr):
+        if arr[i] == '{':
+            num = 0
+            i += 1
+            while arr[i] != '}':
+                num = num * 10 + int(arr[i])
+                i += 1
+            sub = ""
+            while stack[-1] != '(':
+                sub = stack.pop () + sub
+            stack.pop ()
+            stack.append (num * sub)
+            i += 1
+        elif arr[i] == ')':
+            i += 1
+        else:
+            stack.append (arr[i])
+            i += 1
+    res = ""
+    for s in stack:
+        res += s
+    return res
+
+
+print (fun ('a(c(b){2}){3}d'))
+
+

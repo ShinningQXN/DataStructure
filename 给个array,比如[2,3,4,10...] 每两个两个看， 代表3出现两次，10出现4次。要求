@@ -1,0 +1,35 @@
+ 给个array,比如[2,3,4,10...] 每两个两个看， 代表3出现两次，10出现4次。要求实现NEXT()和HASNEXT()。用个pointer和counter记录一下就好了啊，注意corner case。follow up: 给的不是array,是个iterator.
+
+class A:
+    def __init__(self, arr):
+        self.arr = arr
+        self.counter = 0
+        self.index = -1
+        self.val = 0
+
+    def next(self):
+        if self.hasNext() == False:
+            return None
+        if self.counter == 0:
+            self.counter = self.arr[self.index + 1]
+            self.val = self.arr[self.index + 2]
+            self.index += 2
+        self.counter -= 1
+
+        print(self.val)
+
+    def hasNext(self):
+        return self.counter > 0 or self.index < len (self.arr) - 1
+
+
+a = A([2,3,4,10])
+a.next()
+a.next ()
+a.next ()
+a.next ()
+a.next ()
+a.next ()
+a.next ()
+a.next ()
+a.hasNext()
+a.next ()

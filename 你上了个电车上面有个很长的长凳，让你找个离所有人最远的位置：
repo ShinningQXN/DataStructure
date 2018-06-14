@@ -1,0 +1,6 @@
+你上了个电车上面有个很长的长凳，让你找个离所有人最远的位置：
+input: [1,0,0,0,1]
+output: 2
+
+input: [1,0,0,0,0,1, 0 ,1]. From 1point 3acres bbs
+output: 2

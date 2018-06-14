@@ -1,0 +1,49 @@
+public static int[] getNext(String ps) {
+ 2 
+ 3     char[] p = ps.toCharArray();
+ 4 
+ 5     int[] next = new int[p.length];
+ 6 
+ 7     next[0] = -1;
+ 8 
+ 9     int j = 0;
+10 
+11     int k = -1;
+12 
+13     while (j < p.length - 1) {
+14 
+15        if (k == -1 || p[j] == p[k]) {
+16 
+17            next[++j] = ++k;
+18 
+19        } else {
+20 
+21            k = next[k];
+22 
+23        }
+24 
+25     }
+26 
+27     return next;
+28 
+29 }
+
+def get_next(pattern):
+	p = list(pattern)
+	next = [0 for i in range(len(p))]
+
+	next[0], j, k = -1, 0, -1
+	while j < len(p) - 1:
+		if k == -1 or p[j] == p[k]:
+			j += 1
+			k += 1
+			next[j] = k
+		else:
+			k = next[k]
+	return next
+
+abcaab
+
+k = 0
+j = 2
+-100

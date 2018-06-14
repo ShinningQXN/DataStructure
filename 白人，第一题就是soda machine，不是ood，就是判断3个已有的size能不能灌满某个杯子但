@@ -1,0 +1,16 @@
+白人，第一题就是soda machine，不是ood，就是判断3个已有的size能不能灌满某个杯子但不溢出，machine size和杯子size都是range，还是dfs秒了，走了几个test case就过了。第二个问题更没难度，大数字加法，也秒了，然后尬聊20min. Wara
+a(1-3), b(5-7), c(8-10) 三个按钮，一个杯子(5-8), 按b一次就可以灌好(5 <= 5 && 8 >= 7), 另一个杯子(2-4), 就灌不了(b, c太多，a太少), 3号杯子(12-17), 按b和c就可以灌好，大概就是这个意思
+
+def dfs(n, a, b, c, maps):
+	if n in maps:
+		return maps[n]
+	if n % a == 0 or n % b == 0 or n % c == 0:
+		maps[n] = True
+		return True
+	if n < 0:
+		return False
+	flag = dfs(n - a, a, b, c, maps) or dfs(n - b, a, b, c, maps) or dfs(n - c, a, b, c, maps)
+	maps[n] = flag
+	return flag
+
+print (dfs(8, 1,2,3, {})

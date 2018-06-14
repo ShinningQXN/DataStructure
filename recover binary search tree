@@ -1,0 +1,26 @@
+recover binary search tree
+
+binary search tree
+重要特性，inorder traverse
+
+BST性质
+inorder traverse，一定是sorted array
+一开始我也想不清楚，这个时候画一个test case
+就是先是valid BST，然后swap一下，然后用inorder traverse来看，发现一旦有一个值，比它前面的值小，那么这个值就是有问题的
+
+inorder traverse
+当前到的，就是inorder走的
+
+  3
+ / \
+1   8
+   /     \
+  5      6
+	\
+	 9
+	   \
+		 7
+1359786
+细节： pre不可以直接赋为root
+
+很好的一道题，可以尝尝看看

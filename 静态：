@@ -1,0 +1,5 @@
+静态：
+
+不用create实例就可以调用， 当JVM加载的时候就有了，所有实例公用一份，省内存，不麻烦
+
+It means that only one instance of a static field exists[1] even if you create a million instances of the class or you don't create any. It will be shared by all instances.

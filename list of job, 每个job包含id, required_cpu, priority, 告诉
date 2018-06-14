@@ -1,0 +1,1 @@
+list of job, 每个job包含id, required_cpu, priority, 告诉了total available cpu，返回optimal list of job, 讨论了好久好久怎么定义optimal

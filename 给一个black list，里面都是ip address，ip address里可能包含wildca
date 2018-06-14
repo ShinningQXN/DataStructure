@@ -1,0 +1,1 @@
+给一个black list，里面都是ip address，ip address里可能包含wildcard字符 "*", 问如果现在有一个ip address，它是否在black list里。和面试官交流后，确认ip address都是合法的，而wildcard只会出现每个地址的最后，直接用trie做了。

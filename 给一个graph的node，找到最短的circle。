@@ -1,0 +1,8 @@
+给一个graph的node，找到最短的circle。
+
+https://www.cs.princeton.edu/courses/archive/spr10/cos226/exams/fin-f05-sol.pdf
+
+for each edge v-w
+use bfs find shortest path between v and w
+
+so time complex is E * (E + V)

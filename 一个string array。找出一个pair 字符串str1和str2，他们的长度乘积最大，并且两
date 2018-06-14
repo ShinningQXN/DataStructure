@@ -1,0 +1,17 @@
+一个string array。找出一个pair 字符串str1和str2，他们的长度乘积最大，并且两个字符串完全没有一样的字符。
+
+def fun(arr):
+	max_len = 0
+	result = None
+	for i in range(len(arr)):
+		for j in range(i + 1, len(arr)):
+			if len(set(arr[i]) & set(arr[j])) == 0 and len(arr[i]) * len(arr[j]) > max_len:
+				max_len = len(arr[i]) * len(arr[j])
+				result = (arr[i], arr[j])
+
+	return result
+
+abd, ccc, abded, fhgi
+
+
+

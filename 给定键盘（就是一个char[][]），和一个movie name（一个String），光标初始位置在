@@ -1,0 +1,66 @@
+给定键盘（就是一个char[][]），和一个movie name（一个String），光标初始位置在第一个位置，打印出用遥控器选电影名字的步骤，遥控器只能有：上下左右 确认（U,D,L,R,*）
+
+
+# 
+def fun(n):
+	board = [[None for _ in range(n)] for _ in range(n)]
+	k = 0
+	for i in range(n):
+		for j in range(n):
+			board[i][j] = chr(ord('A') + k)
+			k += 1
+			if k == 26:
+			return board
+	return board
+
+	
+
+
+
+
+# get position of each char of name on the board
+positions = {}
+
+for i in range(len(board)):
+	for j in range(len(board[0])):
+		positions[board[i][j]] = (i, j)
+
+curr = ori
+for ss in s:
+	pos = positions[ss]
+	dx = pos[1] - curr[1]
+	if dx > 0:
+		result += 'R' * dx
+	else:
+		result += 'L' * dx
+
+	dy = pos[0] - curr[0]
+	if dy > 0:
+		result += 'D' * dy
+	else:
+		result += 'U' * dy
+	result += '*'
+	curr = pos
+
+return result
+
+
+ABCD
+EFGH
+
+GBE  A
+
+rrdluld
+curr = 12
+pos = 01
+dx = -1, dy = -1
+
+rrdlu
+
+
+
+
+
+
+
+	
